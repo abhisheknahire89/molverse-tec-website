@@ -17,32 +17,40 @@ const narrativeSections: NarrativeSection[] = [
         title: 'MolVerse',
         subtitle: 'Accelerating Molecular Discoveries',
         scrollStart: 0,
-        scrollEnd: 0.25,
+        scrollEnd: 0.15,
         alignment: 'center',
     },
     {
-        id: 'complexity',
-        title: 'Unseen Molecular Complexity',
-        subtitle: 'MolVerse uncovers the hidden structural organization of proteins and macromolecules, enabling researchers to explore form, function, and interaction at unprecedented resolution.',
-        scrollStart: 0.3,
-        scrollEnd: 0.55,
+        id: 'mission',
+        title: '"We need a people\'s cryo-EM"',
+        subtitle: '— Richard Henderson, Nobel Prize in Chemistry 2017. We unlock the true 3D architecture of biological molecules, empowering faster discoveries and reducing animal model use.',
+        scrollStart: 0.2,
+        scrollEnd: 0.35,
         alignment: 'left',
     },
     {
-        id: 'ai-intelligence',
-        title: 'AI-Driven Structural Intelligence',
-        subtitle: 'Our technology integrates advanced machine learning with high-resolution molecular reconstruction. Every atom matters. Every interaction counts.',
+        id: 'innovation',
+        title: 'Sustainable Innovation',
+        subtitle: 'Non-invasive, high-throughput methods to understand biomolecular structures and biochemical interactions into biological and disease pathways.',
+        scrollStart: 0.4,
+        scrollEnd: 0.55,
+        alignment: 'center',
+    },
+    {
+        id: 'precision',
+        title: 'Unbiased Structural Solutions',
+        subtitle: 'Decipher functional insights through high-resolution structures with precision defying hypotheses, biases and AI hallucinations.',
         scrollStart: 0.6,
         scrollEnd: 0.72,
         alignment: 'right',
     },
     {
-        id: 'rigor',
-        title: 'Built for Scientific Rigor',
-        subtitle: 'Designed for researchers, biologists, and drug discovery teams. No visual noise. No approximation. Only structure as it truly exists.',
+        id: 'impact',
+        title: '"When the world is in trouble, chemistry comes to the rescue!"',
+        subtitle: '— Carolyn Bertozzi, Nobel Prize in Chemistry 2022. Making structural biology accessible from genomics to drug development.',
         scrollStart: 0.75,
         scrollEnd: 0.87,
-        alignment: 'center',
+        alignment: 'left',
     },
     {
         id: 'discovery',
@@ -156,15 +164,18 @@ function NarrativeText({
 
                 {/* CTA Button - only on final section */}
                 {section.id === 'discovery' && (
-                    <motion.a
-                        href="#contact"
+                    <motion.button
+                        onClick={() => {
+                            const contactSection = document.getElementById('contact');
+                            contactSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }}
                         className="pointer-events-auto mt-8 inline-block px-10 py-4 
                                    bg-gradient-to-r from-white/10 to-white/5 
                                    border border-white/40 text-white font-medium rounded-full 
                                    backdrop-blur-sm shadow-[0_0_30px_rgba(255,255,255,0.15)]
                                    hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] 
                                    hover:border-white/60 hover:bg-white/15
-                                   transition-all duration-300"
+                                   transition-all duration-300 cursor-pointer"
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.98 }}
                         initial={{ opacity: 0, y: 20 }}
@@ -172,7 +183,7 @@ function NarrativeText({
                         transition={{ delay: 0.5 }}
                     >
                         Contact Us →
-                    </motion.a>
+                    </motion.button>
                 )}
             </div>
         </motion.div>

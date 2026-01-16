@@ -42,11 +42,11 @@ export default function MoleculeScroll() {
     });
 
     // Scientific rotation control based on scroll
-    // Y-axis rotation: Full 360° examination over scroll journey
+    // Y-axis rotation: Clockwise 360° examination over scroll journey
     const rotationY = useTransform(
         scrollYProgress,
         [0, 1],
-        [0, Math.PI * 2] // 0 to 360° in radians
+        [0, -Math.PI * 2] // Negative for clockwise rotation
     );
 
     // X-axis: Very subtle tilt (±5°)
@@ -149,8 +149,8 @@ export default function MoleculeScroll() {
             {/* Scroll Progress Indicator */}
             <ScrollProgress scrollProgress={scrollYProgress} />
 
-            {/* Fixed Spline 3D background */}
-            <div className="fixed inset-0 z-0 bg-gradient-to-b from-[#0a0a0a] to-[#000000]">
+            {/* Fixed Spline 3D background - LEFT SIDE */}
+            <div className="fixed left-0 top-0 w-1/2 h-screen z-0 bg-gradient-to-r from-[#0a0a0a] to-transparent">
                 <Suspense fallback={null}>
                     <Spline
                         scene="https://prod.spline.design/tmYny83K5pEICTRl/scene.splinecode"

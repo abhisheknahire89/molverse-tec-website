@@ -28,11 +28,12 @@ html {
 
 body {
   background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
-  color: var(--text-soft-white);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display',
-    'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 300;
-  letter-spacing: -0.01em;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e8e8e8;
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

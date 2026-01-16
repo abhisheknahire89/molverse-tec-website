@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "MolVerse | Precision Molecular Visualization for Drug Discovery",
+  title: "MolVerse | Accerelating Molecular Discoveries",
   description: "Revolutionary 3D reconstruction and analysis of macromolecular structures. Accelerate drug discovery with cost-effective, unbiased structural biology. Reduce animal model use through AI-driven molecular intelligence.",
   keywords: [
     "structural biology",
